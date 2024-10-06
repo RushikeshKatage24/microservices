@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User {
@@ -16,6 +17,7 @@ public class User {
 	private String name;
 	@Past(message = "Birth Date should be in the past")
 	@JsonProperty("birth_date")
+	@JsonIgnore
 	private LocalDate birthDate;
 	public User(Integer id, String name, LocalDate birthDate) {
 		super();
